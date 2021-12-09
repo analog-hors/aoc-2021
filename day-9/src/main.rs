@@ -40,11 +40,7 @@ fn part_1(input: impl BufRead) -> u32 {
 }
 
 fn flood_fill(grid: &HashMap<Cell, u32>, cell: Cell) -> HashSet<Cell> {
-    fn visit(
-        grid: &HashMap<Cell, u32>,
-        visited: &mut HashSet<Cell>,
-        cell: Cell
-    ) {
+    fn visit(grid: &HashMap<Cell, u32>, visited: &mut HashSet<Cell>, cell: Cell) {
         if visited.contains(&cell) || matches!(grid.get(&cell), None | Some(9)) {
             return;
         }
