@@ -23,7 +23,7 @@ fn neighbours((x, y): Cell) -> [Cell; 4] {
     ]
 }
 
-fn low_points(grid: &'_ HashMap<Cell, u32>) -> impl Iterator<Item=(Cell, u32)> + '_ {
+fn low_points(grid: &HashMap<Cell, u32>) -> impl Iterator<Item=(Cell, u32)> + '_ {
     grid.iter()
         .map(|(&c, &h)| (c, h))
         .filter(|&(cell, height)| {
