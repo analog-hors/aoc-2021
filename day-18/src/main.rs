@@ -105,15 +105,7 @@ impl SfNum {
             } else {
                 false
             },
-            SfNum::Pair(l, r) => {
-                if l.try_split_pair() {
-                    true
-                } else if r.try_split_pair() {
-                    true
-                } else {
-                    false
-                }
-            }
+            SfNum::Pair(l, r) => l.try_split_pair() || r.try_split_pair()
         }
     }
 
